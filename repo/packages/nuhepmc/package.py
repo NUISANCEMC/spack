@@ -13,7 +13,8 @@ class Nuhepmc(CMakePackage):
 
     tags = ["hep"]
 
-    version("stable", tag="stable")
+    version("main", tag="main")
+    version("v1-RC1", tag="v1-RC1")
 
     maintainers("luketpickering")
 
@@ -23,8 +24,7 @@ class Nuhepmc(CMakePackage):
 
     depends_on("cmake@3.17:", type="build")
     depends_on("hepmc3@3.3:+protobuf")
-    depends_on("eigen@3.4:")
-    depends_on("fmt@8.1.1")
+    depends_on("fmt@10.2.1")
     depends_on("python", when="+python")
     depends_on("catch2@3.3.2:", type="test")
 

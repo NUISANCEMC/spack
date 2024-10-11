@@ -79,3 +79,8 @@ class Hepmc3(CMakePackage):
             args.append(self.define("HEPMC3_CXX_STANDARD", "14"))
 
         return args
+
+    def setup_run_environment(self, env):
+        if "+python" in self.spec:
+          py_ver = self.spec["python"].version.up_to(2)
+          env.prepend_path("PYTHONPATH", f"{self.prefix}/lib/python{py_ver}/site-packages/")

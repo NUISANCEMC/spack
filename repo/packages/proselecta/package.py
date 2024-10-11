@@ -13,15 +13,16 @@ class Proselecta(CMakePackage):
 
     tags = ["hep"]
 
-    version("stable", tag="stable")
+    version("main", branch="main")
+    version("v1-RC4", tag="v1-RC4")
 
     maintainers("luketpickering")
 
     license("MIT")
 
     depends_on("cmake@3.18:", type="build")
-    depends_on("nuhepmc+python")
-    depends_on("root@6.30:")
+    depends_on("nuhepmc@v1-RC1+python")
+    depends_on("root@6.10:")
     depends_on("catch2@3.3.2:", type="test")
 
     def cmake_args(self):

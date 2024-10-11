@@ -13,8 +13,8 @@ class NuisanceHepdata(CMakePackage):
 
     tags = ["hep"]
 
-    version("stable", tag="stable")
     version("main", branch="main")
+    version("v1-RC1", tag="v1-RC1")
 
     maintainers("luketpickering")
 
@@ -24,9 +24,8 @@ class NuisanceHepdata(CMakePackage):
 
     depends_on("cmake@3.17:", type="build")
     depends_on("cpr@1.10.4")
-    depends_on("fmt@8.1.1")
     depends_on("yaml-cpp@0.8:")
-    depends_on("spdlog@1.10.0")
+    # depends_on("spdlog@1.14.1") # this version of spdlog doesn't allow us to use it's fmt, build our own
     depends_on("python", when="+python")
 
     def cmake_args(self):
